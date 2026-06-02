@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>어머니의 품, 지구 — 세계 환경의 날</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f5f0e1;
+    --cream-deep:#ece4cf;
+    --green:#1f3d2b;
+    --green-mid:#2f5a3d;
+    --green-soft:#5c7d5a;
+    --gold:#b08d36;
+    --ink:#26301f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Noto Sans KR',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.85;
+    overflow-x:hidden;
+  }
+  .serif{font-family:'Gowun Batang',serif;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:6rem 1.5rem;
+    background:
+      radial-gradient(ellipse at 50% 120%, rgba(31,61,43,0.25), transparent 60%),
+      linear-gradient(160deg,#fbf7ea 0%, #efe7d2 100%);
+    overflow:hidden;
+  }
+  .hero .ring{
+    position:absolute;
+    border:1px solid rgba(31,61,43,0.12);
+    border-radius:50%;
+    pointer-events:none;
+  }
+  .r1{width:520px;height:520px;}
+  .r2{width:760px;height:760px;}
+  .r3{width:1040px;height:1040px;}
+  .globe{
+    width:170px;height:170px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #4a7a52, #1f3d2b 75%);
+    box-shadow:0 30px 70px rgba(31,61,43,0.35), inset -12px -12px 30px rgba(0,0,0,0.3);
+    position:relative;
+    margin-bottom:2.6rem;
+    animation:float 7s ease-in-out infinite;
+  }
+  .globe::after{
+    content:"";position:absolute;inset:0;border-radius:50%;
+    background:radial-gradient(circle at 70% 75%, rgba(176,141,54,0.4), transparent 45%);
+  }
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+  .hero .date{
+    font-size:.85rem;letter-spacing:.5em;color:var(--green-soft);
+    text-transform:uppercase;margin-bottom:1.4rem;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem,6vw,4.2rem);
+    color:var(--green);font-weight:700;line-height:1.3;
+    margin-bottom:1.2rem;
+  }
+  .hero h1 em{font-style:normal;color:var(--gold);}
+  .hero p.lead{
+    max-width:560px;font-size:clamp(1rem,2vw,1.15rem);
+    color:var(--green-mid);
+  }
+  .fade{opacity:0;transform:translateY(24px);animation:rise 1s forwards;}
+  .d1{animation-delay:.2s;}.d2{animation-delay:.5s;}.d3{animation-delay:.8s;}
+  @keyframes rise{to{opacity:1;transform:translateY(0)}}
+
+  /* ===== SECTION SHELL ===== */
+  section.block{padding:5rem 1.5rem;}
+  .wrap{max-width:780px;margin:0 auto;}
+  .eyebrow{
+    font-size:.78rem;letter-spacing:.35em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:1rem;font-weight:500;
+  }
+  h2{
+    font-family:'Gowun Batang',serif;
+    font-size:clamp(1.7rem,4vw,2.4rem);
+    color:var(--green);line-height:1.4;margin-bottom:1.5rem;
+  }
+  p.body{font-size:1.05rem;margin-bottom:1.1rem;color:#33402a;}
+
+  .leaf-divider{
+    display:flex;align-items:center;justify-content:center;
+    gap:.8rem;margin:0 auto 3rem;color:var(--green-soft);
+  }
+  .leaf-divider span{height:1px;width:60px;background:var(--green-soft);opacity:.5;}
+
+  /* ===== ABOUT (cream deep) ===== */
+  .about{background:var(--cream-deep);}
+  .fact-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:1.2rem;margin-top:2rem;
+  }
+  .fact{
+    background:var(--cream);border-radius:18px;padding:1.4rem 1.2rem;
+    border:1px solid rgba(31,61,43,0.1);
+  }
+  .fact b{display:block;font-family:'Gowun Batang',serif;font-size:1.5rem;color:var(--green);margin-bottom:.3rem;}
+  .fact small{color:var(--green-soft);font-size:.85rem;line-height:1.5;}
+
+  /* ===== QUOTE (deep green) ===== */
+  .quote-sec{
+    background:linear-gradient(160deg,var(--green) 0%, #16291c 100%);
+    color:var(--cream);position:relative;overflow:hidden;
+  }
+  .quote-sec::before{
+    content:"\201C";position:absolute;top:-2rem;left:2rem;
+    font-family:'Gowun Batang',serif;font-size:16rem;color:rgba(245,240,225,0.07);
+  }
+  .quote-sec .eyebrow{color:var(--gold);}
+  blockquote{
+    font-family:'Gowun Batang',serif;
+    font-size:clamp(1.25rem,3vw,1.7rem);
+    line-height:1.9;color:#f8f3e4;position:relative;z-index:1;
+  }
+  .cite{
+    margin-top:1.8rem;font-size:.95rem;color:#c9d6c2;
+    border-left:3px solid var(--gold);padding-left:1rem;
+    font-family:'Noto Sans KR',sans-serif;line-height:1.6;
+  }
+  .cite b{color:var(--cream);font-weight:500;}
+
+  /* ===== CLIMATE ===== */
+  .climate .wrap{max-width:720px;}
+  .climate-card{
+    background:var(--cream-deep);border-radius:20px;
+    padding:1.6rem 1.5rem;margin-top:1.4rem;
+    border-left:4px solid var(--green-soft);
+  }
+  .climate-card p{margin:0;color:#33402a;}
+
+  /* ===== ACTIONS ===== */
+  .actions{background:var(--cream-deep);}
+  .act-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-top:2.2rem;}
+  .act{
+    background:var(--cream);border-radius:20px;padding:1.8rem 1.5rem;
+    border:1px solid rgba(31,61,43,0.1);
+    transition:transform .35s ease, box-shadow .35s ease;
+  }
+  .act:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(31,61,43,0.13);}
+  .act .ic{
+    width:48px;height:48px;border-radius:14px;
+    background:var(--green);color:var(--cream);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.4rem;margin-bottom:1rem;
+  }
+  .act h3{font-size:1.1rem;color:var(--green);margin-bottom:.5rem;font-weight:700;}
+  .act p{font-size:.95rem;color:#41502f;margin:0;}
+
+  .tag{
+    display:inline-block;background:var(--green);color:var(--cream);
+    border-radius:999px;padding:.55rem 1.2rem;margin:.35rem .35rem 0 0;
+    font-size:.92rem;
+  }
+
+  /* ===== CLOSING ===== */
+  .closing{
+    background:linear-gradient(160deg,#fbf7ea 0%, #e8dfc8 100%);
+    text-align:center;
+  }
+  .closing h2{margin-bottom:1.2rem;}
+  .closing p{max-width:600px;margin:0 auto 1rem;color:var(--green-mid);font-size:1.08rem;}
+  .seal{
+    margin:2.5rem auto 0;width:60px;height:60px;border-radius:50%;
+    border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;
+    color:var(--gold);font-family:'Gowun Batang',serif;font-size:1.4rem;
+  }
+  footer{
+    background:var(--green);color:#c9d6c2;text-align:center;
+    padding:2rem 1.5rem;font-size:.85rem;line-height:1.7;
+  }
+  footer b{color:var(--cream);font-weight:500;}
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(30px);transition:all .9s ease;}
+  .reveal.on{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="ring r1"></div>
+  <div class="ring r2"></div>
+  <div class="ring r3"></div>
+  <div class="globe fade d1"></div>
+  <p class="date fade d1">6 · 5 World Environment Day</p>
+  <h1 class="fade d2 serif">어머니의 품, <em>지구</em></h1>
+  <p class="lead fade d3">생명을 낳고 품어 온 지구는 우리 모두의 어머니입니다.<br>그 품을 살리는 작은 실천으로, 창조 본연의 세계를 함께 만들어갑니다.</p>
+</header>
+
+<!-- ABOUT -->
+<section class="block about">
+  <div class="wrap reveal">
+    <p class="eyebrow">세계 환경의 날이란</p>
+    <h2>하나뿐인 지구를 위한<br>전 세계의 약속</h2>
+    <p class="body">세계 환경의 날은 1972년 6월 스웨덴 스톡홀름에서 열린 유엔인간환경회의에서 국제사회가 지구환경 보전을 위해 공동 노력을 다짐하며 제정한 날로, 매년 6월 5일입니다.</p>
+    <p class="body">이 회의에서 설립된 유엔환경계획(UNEP)을 중심으로, 오늘날 150개국 이상이 참여하는 세계 최대 규모의 환경 캠페인으로 자리 잡았습니다. 우리나라도 1996년 6월 5일을 법정기념일 '환경의 날'로 제정해 환경보전 의식을 기리고 있습니다.</p>
+    <div class="fact-grid">
+      <div class="fact"><b>1972</b><small>스톡홀름<br>유엔인간환경회의</small></div>
+      <div class="fact"><b>6·5</b><small>매년<br>세계 환경의 날</small></div>
+      <div class="fact"><b>150+</b><small>참여 국가<br>세계 최대 환경 캠페인</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- MOTHER EARTH -->
+<section class="block">
+  <div class="wrap reveal" style="text-align:center;">
+    <p class="eyebrow">어머니의 품인 지구</p>
+    <h2>생명을 품은 어머니,<br>그 이름은 지구</h2>
+    <p class="body">어머니 없이는 생명이 태어날 수 없습니다. 지구 역시 흙과 물과 바람으로 모든 생명을 낳고 길러 온 어머니입니다.</p>
+    <p class="body">그 어머니의 품이 지금 몸살을 앓고 있습니다. 자녀가 어머니의 아픔을 외면할 수 없듯, 우리도 지구의 신음을 외면할 수 없습니다. 어머니를 향한 효심으로 지구를 바라볼 때, 환경 보호는 의무가 아니라 사랑이 됩니다.</p>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="block quote-sec">
+  <div class="wrap reveal">
+    <p class="eyebrow">참어머님 말씀</p>
+    <blockquote>
+      인류는 점점 더 늘어나고 있습니다. 그러나 인류의 미래를 지켜주어야 할 지구가 수난을 당하고 있습니다. … 내 일이 아니라고 해서 책임질 수 없는 행동을 해서는 안 될 것입니다. 우리만이 아닌 우리가 사랑하는 자녀의 미래가 걸려 있기 때문입니다.
+    </blockquote>
+    <p class="cite"><b>한학자 총재(참어머님)</b><br>「천운의 봄바람과 참효자효녀의 길」 (2020.11.22)</p>
+  </div>
+</section>
+
+<!-- CLIMATE -->
+<section class="block climate">
+  <div class="wrap reveal">
+    <p class="eyebrow">기후 변화, 지금 우리의 현실</p>
+    <h2>어머니의 호소에<br>귀 기울일 때</h2>
+    <p class="body">집중호우와 산불, 거센 태풍과 가뭄 — 이상기후는 더 이상 먼 나라의 이야기가 아닙니다. 자연이 우리에게 호소하고 있습니다.</p>
+    <div class="climate-card">
+      <p>참어머님께서는 가뭄으로 비가 오지 않아 인구의 3분의 1이 이재민과 난민이 된 소말리아의 현실을 전하시며, "인간을 위해서 하늘이 창조한 아름다운 지구가 왜 이렇게 변했을까요?"라고 물으셨습니다. 이 물음 앞에 우리 한 사람 한 사람의 응답이 필요합니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIONS -->
+<section class="block actions">
+  <div class="wrap reveal" style="text-align:center;">
+    <p class="eyebrow">일상에서 실천하기</p>
+    <h2>지구를 살리는<br>작은 손길들</h2>
+  </div>
+  <div class="wrap">
+    <div class="act-grid">
+      <div class="act reveal"><div class="ic">🌡️</div><h3>적정 실내온도</h3><p>냉난방 온도를 알맞게 조절해 에너지를 아끼는 일이 곧 지구를 아끼는 일입니다.</p></div>
+      <div class="act reveal"><div class="ic">🥤</div><h3>다회용기 사용</h3><p>텀블러와 다회용기로 일회용 쓰레기를 줄여 자원의 낭비를 막습니다.</p></div>
+      <div class="act reveal"><div class="ic">🎁</div><h3>기념품 줄이기</h3><p>일회용 기념품 사용을 줄이고, 꼭 필요한 것만 오래 쓰는 문화를 만듭니다.</p></div>
+      <div class="act reveal"><div class="ic">💡</div><h3>전기 절약</h3><p>쓰지 않는 조명과 전자기기 전원을 끄는 작은 습관이 큰 변화를 만듭니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="block">
+  <div class="wrap reveal" style="text-align:center;">
+    <p class="eyebrow">지역사회와 함께</p>
+    <h2>이웃과 손잡고<br>지구를 돌보는 시간</h2>
+    <p class="body">혼자보다 함께일 때 실천은 더 멀리 퍼져갑니다. 가정과 이웃, 지역사회가 손잡고 지구를 돌보는 봉사로 환경의 날의 뜻을 살려갑니다.</p>
+    <div style="margin-top:1.6rem;">
+      <span class="tag">🌿 지역 환경 정화</span>
+      <span class="tag">🚶 줍깅(줍기+조깅)</span>
+      <span class="tag">🌳 나무 심기</span>
+      <span class="tag">🤝 환경 캠페인 동참</span>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="block closing">
+  <div class="wrap reveal">
+    <p class="eyebrow">창조 본연의 세계를 향하여</p>
+    <h2 class="serif">어머니의 품을 지키는 일,<br>우리 손에서 시작됩니다</h2>
+    <p>우리가 사랑하는 자녀에게 더 맑은 하늘과 푸른 땅을 물려주는 일.</p>
+    <p>지구를 살리는 작은 실천 하나하나가, 창조 본연의 아름다운 세계를 되찾는 첫걸음입니다.</p>
+    <div class="seal serif">地</div>
+  </div>
+</section>
+
+<footer>
+  <b>가정연합 사회공헌국</b><br>
+  세계 환경의 날을 맞아 · 어머니의 품인 지구를 함께 살립니다
+</footer>
+
+<script>
+  const obs=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');});
+  },{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
